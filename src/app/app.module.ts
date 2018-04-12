@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 
 // other imports...
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { GeoDistanceService } from './geo-distance.service';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,7 @@ import { LeafletModule } from '@asymmetrik/ngx-leaflet';
   imports: [
     BrowserModule, LeafletModule
   ],
-  providers: [],
+  providers: [GeoDistanceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

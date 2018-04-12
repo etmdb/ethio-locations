@@ -2,6 +2,8 @@ import { Component, NgZone } from '@angular/core';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 
 import * as L from 'leaflet';
+import { GeoDistanceService } from './geo-distance.service';
+import { GeoCoordinate } from "./geo-coordinate";
 
 @Component({
   selector: 'app-root',
@@ -12,6 +14,7 @@ export class AppComponent {
 	title = 'Ethio Locations Game';
 	lat = null;
 	lang = null;
+  distance = null;
 	map_layers: L.Layer[] = [L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', 
 	{ 
 		maxZoom: 18, 
@@ -22,7 +25,7 @@ export class AppComponent {
 		zoom: 12,
 		center: L.latLng(8.879966, 38.726909)
 	}
-		constructor(private zone: NgZone) {
+		constructor(private zone: NgZone, private geoDistanceService : GeoDistanceService) {
 
 		}
 		onMapReady(map: L.Map) {
@@ -43,8 +46,23 @@ export class AppComponent {
 						
 				});
 				this.zone.run(() => {
+
+          let location1: GeoCoordinate = {
+              latitude: 8.879966,
+              longitude: 38.726909
+            };
+
+
 					this.lat = e.latlng.lat;
 					this.lang = e.latlng.lng;
+
+          let location2: GeoCoordinate = {
+            latitude: this.lat,
+            longitude: this.lang
+          };
+
+          this.distance = this.geoDistanceService.getDistanceInKilometers(location1, location2);
+
 				});
 				c.addTo(map);
 				});
