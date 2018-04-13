@@ -38,7 +38,7 @@ export class AppComponent {
 							 iconSize: [ 25, 41 ],
 							 iconAnchor: [ 13, 41 ],
 							
-							 iconUrl: 'assets/download.png',
+							 iconUrl: 'assets/download2.png',
 							 //shadowUrl: 'assets/download.png'		
 					})
 					
