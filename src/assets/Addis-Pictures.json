@@ -1,0 +1,66 @@
+[
+    {
+        "format": "jpg",
+        "width": 5616,
+        "height": 3744,
+        "filename": "1.jpg",
+        "id": 0,
+        "image_url": "http://localhost:4200/assets/images/1.jpg" 
+    },
+    {
+        "format": "jpeg",
+        "width": 5616,
+        "height": 3744,
+        "filename": "2.jpg",
+        "id": 1,
+        "image_url": "http://localhost:4200/assets/images/2.jpg"  
+    },
+    {
+        "format": "jpeg",
+        "width": 5616,
+        "height": 3744,
+        "filename": "3.jpg",
+        "id": 3,
+        "image_url": "http://localhost:4200/assets/images/3.jpg"
+    },
+    {
+        "format": "jpeg",
+        "width": 5616,
+        "height": 3744,
+        "filename": "4.jpg",
+        "id": 4,
+         "image_url": "http://localhost:4200/assets/images/4.jpg"
+    },
+    {
+        "format": "jpeg",
+        "width": 5616,
+        "height": 3744,
+        "filename": "5.jpg",
+        "id": 5,
+        "image_url": "http://localhost:4200/assets/images/5.jpg"
+    },
+    {
+        "format": "jpeg",
+        "width": 5616,
+        "height": 3744,
+        "filename": "6.jpg",
+        "id": 6,
+        "image_url": "http://localhost:4200/assets/images/6.jpg"
+    },
+    {
+        "format": "jpeg",
+        "width": 5616,
+        "height": 3744,
+        "filename": "7.jpg",
+        "id": 7,
+        "image_url": "http://localhost:4200/assets/images/7.jpg"
+    },
+    {
+        "format": "jpeg",
+        "width": 5616,
+        "height": 3744,
+        "filename": "8.jpg",
+        "id": 8,
+        "image_url": "http://localhost:4200/assets/images/8.jpg"
+    }
+]
