@@ -15,6 +15,10 @@ export class AppComponent {
 	lat = null;
 	lang = null;
 	distance = null;
+	distanceInKillometer = 0;
+	distanceInMiles = null; 
+	Point = 0; 
+	note = 'developers';
 	map_layers: L.Layer[] = [L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
 		{
 			maxZoom: 18,
@@ -37,7 +41,7 @@ export class AppComponent {
 						iconSize: [25, 41],
 						iconAnchor: [13, 41],
 
-						iconUrl: 'assets/download.png',
+						iconUrl: 'assets/download2.png',
 						//shadowUrl: 'assets/download.png'		
 					})
 
@@ -63,6 +67,11 @@ export class AppComponent {
 
 					this.distance = this.geoDistanceService.getDistanceInKilometers(location1, location2);
 
+					this.distanceInKillometer = this.geoDistanceService.getDistanceInKilometers(location1, location2);
+					this.distanceInMiles = this.geoDistanceService.getDistanceInMiles(location1, location2);
+					this.Point = this.geoDistanceService.getPoint(this.distanceInKillometer);
+					this.note = this.geoDistanceService.developers();
+				
 				});
 				c.addTo(map);
 			});

@@ -22,7 +22,7 @@ export class AddisImagesComponent implements OnInit {
   }
 
   private _randomImageUrls(images: Array<{ id: number }>): Array<string> {
-    return [1, 2, 3, 4, 5].map(() => {
+    return [1, 2, 3, 4, 5 ,6 ,7 ,8].map(() => {
       const randomId = images[Math.floor(Math.random() * 8) + 1].id;
       //  console.log(`http://localhost:4200/assets/images/${randomId}.jpg`);
       return `http://localhost:4200/assets/images/${randomId}.jpg`;

@@ -45,5 +45,27 @@ export class GeoDistanceService {
         let c = this._getDistance(coord1, coord2);
         // d = R ⋅ c
         return this._earthRadiusInMiles * c;
-	}
+        }
+        getPoint(distance:number)
+        {
+                if(distance <= 2)
+                {
+             return 10;
+                }
+                if(distance >2 && distance <=3 )
+                {
+                return 8;
+                }
+        if(distance >4)
+        {
+        return 0;
+        }
 }
+
+        developers()
+        {
+                return 'Hanna Adugna Mahlet Girma';
+                
+        }
+}
+
