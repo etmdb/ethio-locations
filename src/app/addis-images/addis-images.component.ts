@@ -7,7 +7,7 @@ import { map } from 'rxjs/operators';
 @Component({
   selector: 'app-addis-images',
   templateUrl: './addis-images.component.html',
-  styleUrls: ['./addis-images.component.css']
+ 
 })
 export class AddisImagesComponent implements OnInit {
 
@@ -16,15 +16,16 @@ export class AddisImagesComponent implements OnInit {
   constructor(private _http: HttpClient) { }
 
   ngOnInit() {
-    this._http.get('https://picsum.photos/list')
+    this._http.get('http://localhost:4200/assets/Addis-Pictures.json')
       .pipe(map((images: Array<{ id: number }>) => this._randomImageUrls(images)))
       .subscribe(images => this.images = images);
   }
 
   private _randomImageUrls(images: Array<{ id: number }>): Array<string> {
-    return [1, 2, 3].map(() => {
-      const randomId = images[Math.floor(Math.random() * images.length)].id;
-      return `https://picsum.photos/900/500?image=${randomId}`;
+    return [1, 2, 3, 4, 5].map(() => {
+      const randomId = images[Math.floor(Math.random() * 8) + 1].id;
+      //  console.log(`http://localhost:4200/assets/images/${randomId}.jpg`);
+      return `http://localhost:4200/assets/images/${randomId}.jpg`;
     });
   }
 
