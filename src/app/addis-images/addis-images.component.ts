@@ -28,5 +28,5 @@ export class AddisImagesComponent implements OnInit {
       return `http://localhost:4200/assets/images/${randomId}.jpg`;
     });
   }
-
+  
 }
