@@ -1,3 +1,18 @@
-<p>
-  addis-map works!
-</p>
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="container-fluid">
+  <h1>
+    Welcome to {{ title }}!
+    <br><br>
+    <br>latitude: {{lat | number: '1.2-2'}} longtiude: {{lang |number: '1.2-2'}}<br>
+
+  </h1>
+  <br>
+  <div style="height: 300px;" leaflet (leafletMapReady)="onMapReady($event)" [leafletOptions]="options">
+  </div>
+  <p>
+
+
+    <br>your guess was <b>{{distanceInKillometer | number: '1.2-2'}}km</b> ( {{distanceInMiles |number:'1.2-2'}} miles) from
+    the correct location<br>
+    <br>your point is {{ Point }}<br>
+  </p>
