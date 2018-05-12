@@ -6,8 +6,8 @@
         "filename": "1.jpg",
         "id": 0,
         "image_url": "http://localhost:4200/assets/images/1.jpg" ,
-        "lat": "9.046543 ",
-        "long":"38.7607747"
+        "lat": 9.046543,
+        "long":38.7607747
     },
     {
         "format": "jpeg",
@@ -16,8 +16,18 @@
         "filename": "2.jpg",
         "id": 1,
         "image_url": "http://localhost:4200/assets/images/2.jpg",
-        "lat": "9.0183883",
-        "long":"38.7499954"
+        "lat": 9.0183883,
+        "long":38.7499954
+    },
+    {
+        "format": "jpeg",
+        "width": 5616,
+        "height": 3744,
+        "filename": "2.jpg",
+        "id": 2,
+        "image_url": "http://localhost:4200/assets/images/2.jpg",
+        "lat": 9.0168885,
+        "long":38.7515653
     },
     {
         "format": "jpeg",
@@ -26,8 +36,8 @@
         "filename": "3.jpg",
         "id": 3,
         "image_url": "http://localhost:4200/assets/images/3.jpg",
-        "lat": "9.0168885",
-        "long":"38.7515653,"
+        "lat": 9.0168885,
+        "long":38.7515653
     },
     {
         "format": "jpeg",
@@ -36,8 +46,8 @@
         "filename": "4.jpg",
         "id": 4,
          "image_url": "http://localhost:4200/assets/images/4.jpg",
-         "lat": "9.0155666",
-         "long":"38.7709738"
+         "lat": 9.0155666,
+         "long":38.7709738
     },
     {
         "format": "jpeg",
@@ -46,8 +56,8 @@
         "filename": "5.jpg",
         "id": 5,
         "image_url": "http://localhost:4200/assets/images/5.jpg",
-        "lat": "9.0183883",
-        "long":"38.7607747"
+        "lat": 9.0183883,
+        "long":38.7607747
     },
     {
         "format": "jpeg",
@@ -56,8 +66,8 @@
         "filename": "6.jpg",
         "id": 6,
         "image_url": "http://localhost:4200/assets/images/6.jpg",
-        "lat": "9.0321117",
-        "long":"38.7522984"
+        "lat": 9.0321117,
+        "long":38.7522984
     },
     {
         "format": "jpeg",
@@ -66,8 +76,8 @@
         "filename": "7.jpg",
         "id": 7,
         "image_url": "http://localhost:4200/assets/images/7.jpg",
-        "lat": "9.0058058",
-        "long":"38.7846695"
+        "lat": 9.0058058,
+        "long":38.7846695
     },
     {
         "format": "jpeg",
@@ -76,7 +86,7 @@
         "filename": "8.jpg",
         "id": 8,
         "image_url": "http://localhost:4200/assets/images/8.jpg",
-        "lat": "9.0209539",
-        "long":"38.7585072"
+        "lat": 9.0209539,
+        "long":38.7585072
     }
 ]

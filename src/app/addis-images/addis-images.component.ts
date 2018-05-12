@@ -3,37 +3,72 @@ import { Component, OnInit,EventEmitter } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';import { Subject, Observable } from 'rxjs';
 import { PHOTOS } from './pic'
-
+import { GeoCoordinate } from "../addis-map/geo-coordinate";
 
 @Component({
   selector: 'app-addis-images',
   templateUrl: './addis-images.component.html',
-  template: `
-  <img src="{{photos[(counter$ | async)]}}">
+ 
 
-  <button (click)="button$.next(-1)">Prev</button>
-  <button (click)="button$.next(1)">Next</button>
-
-  
-  <button (click)="button$.next(1)">submit</button>
-`,
  
 })
 export class AddisImagesComponent implements OnInit {
 
-  images: Array<string>;
+  location1: Array <GeoCoordinate>;
+  image_data = [
+  {
+    imageUrl: "http://localhost:4200/assets/images/1.jpg",
+    latitude: 9.046543,
+    longitude:38.7607747
+  },
+  {
+    imageUrl: "http://localhost:4200/assets/images/2.jpg",
+    latitude: 9.0168885,
+    longitude:38.7515653
+  },
+  {
+    imageUrl: "http://localhost:4200/assets/images/3.jpg",
+    latitude: 9.046543,
+    longitude:38.7607747
+  },
+  {
+    imageUrl: "http://localhost:4200/assets/images/4.jpg",
+    latitude: 9.0168885,
+    longitude:38.7515653
+  },
+  {
+    imageUrl: "http://localhost:4200/assets/images/5.jpg",
+    latitude: 9.046543,
+    longitude:38.7607747
+  },
+  {
+    imageUrl: "http://localhost:4200/assets/images/6.jpg",
+    latitude: 9.0168885,
+    longitude:38.7515653
+  },
+  {
+    imageUrl: "http://localhost:4200/assets/images/7.jpg",
+    latitude: 9.046543,
+    longitude:38.7607747
+  },
+  {
+    imageUrl: "http://localhost:4200/assets/images/8.jpg",
+    latitude: 9.0168885,
+    longitude:38.7515653
+  }
+  ];
+  
 
  
-   photos = PHOTOS;
+   photos = [];
    START = 0;
-   TOTAL = PHOTOS.length;
+   TOTAL = 5;
    button$ = new Subject();
    counter$: Observable<any>;
    constructor(private _http: HttpClient) {
      this.counter$ = Observable.merge(
-       this.button$,
-       Observable.interval(5000).mapTo(1)
-     )
+       this.button$
+           )
        .startWith(this.START)
        .scan((acc: number, curr: any) => {
          // if next && last image
@@ -46,17 +81,25 @@ export class AddisImagesComponent implements OnInit {
      }
 
   ngOnInit() {
-    this._http.get('http://localhost:4200/assets/Addis-Pictures.json')
-      .pipe(map((images: Array<{ id: number }>) => this._randomImageUrls(images)))
-      .subscribe(images => this.images = images);
+    let sorted_image_data = this._randomImageUrls(this.image_data, 5);
+    for (let image of sorted_image_data) {
+      this.photos.push(image.imageUrl);
+    }    
+    console.log(this.photos);
   }
 
-  private _randomImageUrls(images: Array<{ id: number }>): Array<string> {
-    return [1, 2, 3, 4, 5 ,6 ,7 ,8].map(() => {
-      const randomId = images[Math.floor(Math.random() * 8) + 1].id;
-      //  console.log(`http://localhost:4200/assets/images/${randomId}.jpg`);
-      return `http://localhost:4200/assets/images/${randomId}.jpg`;
-    });
+  //To randomly select images from the image list. The images 
+  //are named by number (which should be modified in the future). We 
+  //use Knuth Shuffle to randomly select images.
+  private _randomImageUrls(myArray,nb_picks){
+    for (let i = myArray.length-1; i > 1  ; i--)
+    {
+        let r = Math.floor(Math.random()*i);
+        let t = myArray[i];
+        myArray[i] = myArray[r];
+        myArray[r] = t;
+    }
+    return myArray.slice(0,nb_picks);
   }
   
   
