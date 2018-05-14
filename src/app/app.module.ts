@@ -7,8 +7,8 @@ import { AppComponent } from './app.component';
 // other imports...
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { GeoDistanceService } from './addis-map/geo-distance.service';
+import { AddisImageService } from './addis-images/addis-image.service';
 import { AddisMapComponent } from './addis-map/addis-map.component';
-import { AddisImagesComponent } from './addis-images/addis-images.component';
 
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -18,8 +18,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
-    AddisMapComponent,
-    AddisImagesComponent
+    AddisMapComponent
   ],
   imports: [
     BrowserModule, 
@@ -29,7 +28,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HttpClientModule, 
     NgbModule.forRoot()
   ],
-  providers: [GeoDistanceService],
+  providers: [GeoDistanceService, AddisImageService],
   bootstrap: [AppComponent]
 })
 
