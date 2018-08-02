@@ -20,7 +20,7 @@
  <div class="card-header">Info</div>
 
   <p *ngIf="distance > 0">
-    <br>your guess was <b>{{distance| number: '1.2-2'}}km</b> ( X {{distanceInMiles |number:'1.2-2'}} miles) from
+    <br>your guess was <b>{{distance| number: '1.2-2'}}km</b> ( {{distanceInMiles |number:'1.2-2'}} miles) from
     the correct location<br>
     <br>your point is {{ total_point }}<br>
   </p>
