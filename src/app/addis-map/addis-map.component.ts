@@ -62,7 +62,8 @@ export class AddisMapComponent{
             longitude: this.lang
           };
           this.distance = this.geoDistanceService.getDistanceInKilometers(location1, this.answers[acc]);
-          this.Point = this.geoDistanceService.getPoint(this.distanceInKillometer);
+          this.Point = this.geoDistanceService.getPoint(this.distance);
+          console.log(this.distance, this.Point);
           this.total_point = this.total_point + this.Point;
          // if next && last image
          if (curr === 1 && acc === this.TOTAL - 1) return 0;

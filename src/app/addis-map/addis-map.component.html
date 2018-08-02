@@ -5,15 +5,28 @@
   <hr class="my-4">
   
 </div> 
- 
+<div class="container"> 
+
   <div style="height: 300px;" leaflet (leafletMapReady)="onMapReady($event)" [leafletOptions]="options">
   </div>
-  <p>
-    <br>your guess was <b>{{distance| number: '1.2-2'}}km</b> ( {{distanceInMiles |number:'1.2-2'}} miles) from
+
+<div class="row">
+
+<div class="col">
+<img class="img-fluid" src="{{photos [(counter$ | async)]}}">
+</div>
+<div class="col">
+  <div class="card text-white bg-success mb-3" style="max-width: 100rem;">
+ <div class="card-header">Info</div>
+
+  <p *ngIf="distance > 0">
+    <br>your guess was <b>{{distance| number: '1.2-2'}}km</b> ( X {{distanceInMiles |number:'1.2-2'}} miles) from
     the correct location<br>
     <br>your point is {{ total_point }}<br>
   </p>
-
-<img class="img-fluid" src="{{photos [(counter$ | async)]}}">
-<button *ngIf="show_next==true" type="button" class="btn btn-primary" (click)="button$.next(1)">Next</button>
+  <button *ngIf="show_next==true" type="button" class="btn btn-primary" (click)="button$.next(1)">Next</button>
 <!--button type="button" class="btn btn-primary" (click)="button$.next(1)">submit</button-->
+</div>
+</div>
+</div>
+</div>

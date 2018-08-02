@@ -52,9 +52,11 @@ export class GeoDistanceService {
     }
     if (distance > 2 && distance <= 3) {
       return 8;
+    }if(distance > 3 && distance <= 4){
+    return 5
     }
     if (distance > 4) {
-      return 0;
+      return 1;
     }
   }
 
