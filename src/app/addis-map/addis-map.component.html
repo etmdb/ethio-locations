@@ -5,10 +5,13 @@
   <hr class="my-4">
   
 </div> 
-<div class="container"> 
 
+<div class="container" *ngIf ="!flag_gameover" > 
+ 
   <div style="height: 300px;" leaflet (leafletMapReady)="onMapReady($event)" [leafletOptions]="options">
+  
   </div>
+
 
 <div class="row">
 
@@ -26,7 +29,14 @@
   </p>
   <button *ngIf="show_next==true" type="button" class="btn btn-primary" (click)="button$.next(1)">Next</button>
 <!--button type="button" class="btn btn-primary" (click)="button$.next(1)">submit</button-->
+
 </div>
 </div>
 </div>
+</div>
+<div *ngIf = "flag_gameover" >
+  your point is {{ total_point }}
+
+  <button class="btn btn-primary"> Play Again</button>
+
 </div>

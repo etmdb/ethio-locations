@@ -27,8 +27,7 @@ export class AddisMapComponent{
   Point = 0;
   total_point = 0;
   note = 'developers';
-
-  
+  flag_gameover = false;
 
   map_layers: L.Layer[] = [L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
     {
@@ -37,8 +36,8 @@ export class AddisMapComponent{
     })];
   options = {
     layers: this.map_layers,
-    zoom: 12,
-    center: L.latLng(8.879966, 38.726909)
+    zoom: 14,
+    center: L.latLng(9.01,38.76)
   };
 
   show_next = false;
@@ -62,19 +61,21 @@ export class AddisMapComponent{
             longitude: this.lang
           };
           this.distance = this.geoDistanceService.getDistanceInKilometers(location1, this.answers[acc]);
+
          this.distanceInMiles = this.geoDistanceService.getDistanceInMiles(location1, this.answers[acc]);
+
           this.Point = this.geoDistanceService.getPoint(this.distance);
           console.log(this.distance, this.Point);
           this.total_point = this.total_point + this.Point;
          // if next && last image
-         if (curr === 1 && acc === this.TOTAL - 1) return 0;
+         if (curr === 1 && acc === this.TOTAL - 1) 
+         this.flag_gameover = true;
          // if prev && first image
          if (curr === -1 && acc === 0) return this.TOTAL - 1;
          // all other cases
          return acc + curr;
        })
 
-  
   }
 
 

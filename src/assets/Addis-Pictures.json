@@ -37,7 +37,7 @@
         "id": 3,
         "image_url": "http://localhost:4200/assets/images/3.jpg",
         "lat": 9.0168885,
-        "long":38.7515653
+        "long":38.7515653 
     },
     {
         "format": "jpeg",
