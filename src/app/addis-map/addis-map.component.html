@@ -1,11 +1,5 @@
 <!--The content below is only a placeholder and can be replaced.-->
-  <div class="jumbotron">
-  <h1 class="display-4">Welcome to {{ title }}!</h1>
-  <p class="lead">This is a simple game to help users to understand our city Addis.</p>
-  <hr class="my-4">
   
-</div> 
-
 <div class="container" *ngIf ="!flag_gameover" > 
  
   <div style="height: 300px;" leaflet (leafletMapReady)="onMapReady($event)" [leafletOptions]="options">
@@ -37,6 +31,7 @@
 <div *ngIf = "flag_gameover" >
   your point is {{ total_point }}
 
-  <button class="btn btn-primary"> Play Again</button>
+  <button href="home" class="btn btn-primary"> Play Again</button>
+  
 
 </div>
