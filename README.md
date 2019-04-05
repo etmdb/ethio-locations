@@ -1,12 +1,11 @@
 # Ethio Locations
 
-Ethio-locations is a web-based app under construction. The application is going to be developed using JavaScript technologies. 
-
+Ethio-locations is a web-based app under construction. The application is developed using JavaScript technologies. 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source code.
 
 ## Ng leaflet 
 
@@ -35,44 +34,59 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## Dockerizing Ethio-locations
 Please install and setup [Docker](https://docs.docker.com/install/) on your
 system and check for the docker version:
+
 ```sh
 $ docker -v
 ```
+
 Once you have installed docker in your system, go to your project dir & build
 and tag the Docker image by running the following command:
+
 ```sh
 $ docker build -t ethio-locations .
 ```
+
 Check the images are created successfully
+
 ```sh
 $ docker images
 ```
+
 Then, to spin up the ethio-locations container once the build is done, run the
-following command 
+following command
+
 ```sh
 $ docker run -it -v ${PWD}:/usr/src/app -v /usr/src/app/node_modules -p
 4200:4200 --rm ethio-locations
 ```
+
 Check the ethio-location docker is running successfully using the docker
 process monitor
+
 ```sh
 $ docker ps -a
 ```
+
 Open your browser to [localhost](http://localhost:4200) and you should see the
 app running smoothly, make some changes to see how it reloads in real time. You
 can use the -d flag to run the container in the background:
+
 ```sh
 $ docker run -d -v ${PWD}:/usr/src/app -v /usr/src/app/node_modules -p
 4200:4200 --rm ethio-locations
 ```
+
 To run the unit and e2e tests: get the container ID and use the docker command,
 and replace $CONTAINER-ID 
+
 ```sh
 $ docker exec -it $CONTAINER-ID ng test --watch=false
 $ ng e2e
 ```
+
 To stop the container, get the container ID and use the docker command, and
 replace $CONTAINER-ID 
+
 ```sh
 $ docker ps -a
 $ docker stop $CONTAINER-ID 
